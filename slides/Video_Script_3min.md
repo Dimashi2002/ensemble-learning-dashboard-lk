@@ -1,7 +1,7 @@
 # 3-MINUTE VIDEO SCRIPT (about 400 words, ~3:00)
 
 **0:00-0:20 | Slide 1-2 (Problem)**
-Hello, I am ____. Sri Lanka's tourism, farming and power planning depend on daily weather. My project forecasts tomorrow's mean temperature in Colombo using ensemble learning.
+Hello, I am Wickramage, index 224215R. Sri Lanka's tourism, farming and power planning depend on daily weather. My project forecasts tomorrow's mean temperature in Colombo using ensemble learning.
 
 **0:20-0:50 | Slide 3 (Innovation)**
 My innovation is a hybrid model. ARIMA captures the trend and the yearly season. Then a Random Forest learns what ARIMA missed, using recent rain, humidity and wind. The final forecast is ARIMA plus the Random Forest correction. Everything is compared in one dashboard.

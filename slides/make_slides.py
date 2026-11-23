@@ -31,7 +31,7 @@ def slide(title, bullets, table=None):
     return s
 
 slide("Colombo Weather Forecasting with Ensemble Learning",
-      ["Ensemble Learning Dashboard - assignment submission", "Name: ________   Index: ________", "Real Sri Lankan data: Colombo daily weather 2010-2025",
+      ["Ensemble Learning Dashboard - assignment submission", "Name: Wickramage D.N   Index: 224215R", "Real Sri Lankan data: Colombo daily weather 2010-2025",
        "Bagging  +  Boosting  +  Stacking  +  RF-ARIMA hybrid"])
 slide("1. Problem", ["Tourism, farming and power demand in Sri Lanka depend on the weather", "Goal: forecast NEXT-DAY mean temperature in Colombo",
                      "Question: which ensemble forecasts best - and is a hybrid worth it?"])
@@ -54,7 +54,7 @@ prs.save("slides/Presentation.pptx")
 script = f"""# 3-MINUTE VIDEO SCRIPT (about 400 words, ~3:00)
 
 **0:00-0:20 | Slide 1-2 (Problem)**
-Hello, I am ____. Sri Lanka's tourism, farming and power planning depend on daily weather. My project forecasts tomorrow's mean temperature in Colombo using ensemble learning.
+Hello, I am Wickramage, index 224215R. Sri Lanka's tourism, farming and power planning depend on daily weather. My project forecasts tomorrow's mean temperature in Colombo using ensemble learning.
 
 **0:20-0:50 | Slide 3 (Innovation)**
 My innovation is a hybrid model. ARIMA captures the trend and the yearly season. Then a Random Forest learns what ARIMA missed, using recent rain, humidity and wind. The final forecast is ARIMA plus the Random Forest correction. Everything is compared in one dashboard.

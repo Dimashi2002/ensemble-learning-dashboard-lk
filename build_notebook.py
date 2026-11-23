@@ -7,7 +7,7 @@ md = lambda s: C.append(nbf.v4.new_markdown_cell(s))
 code = lambda s: C.append(nbf.v4.new_code_cell(s))
 
 md("# Ensemble Learning Dashboard - Colombo Temperature Forecasting (Sri Lanka)\n"
-   "**Author:** _your name / index no._  |  **Submission:** 23 Nov 2026\n\n"
+   "**Author:** Wickramage D.N - 224215R  |  **Submission:** 23 Nov 2026\n\n"
    "> **AI disclosure:** the code was developed with help from Claude (AI assistant). The data, experiments and results below were run by me; "
    "the interpretation sections are marked for my own words.\n\n"
    "[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]"

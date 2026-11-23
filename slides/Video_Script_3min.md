@@ -1,25 +1,26 @@
-# 3-MINUTE VIDEO SCRIPT (about 400 words, ~3:00)
+# 3-MINUTE DEMO SCRIPT  (slides 1:15  +  LIVE dashboard 1:45)
 
-**0:00-0:20 | Slide 1-2 (Problem)**
-Hello, I am Wickramage, index 224215R. Sri Lanka's tourism, farming and power planning depend on daily weather. My project forecasts tomorrow's mean temperature in Colombo using ensemble learning.
+BEFORE YOU START (screen-share setup):
+1. Open a terminal in the project folder and run:  python -m streamlit run app.py
+2. Open http://localhost:8501 in the browser, keep PowerPoint (Presentation.pptx) in another window.
+3. Share your screen, start recording.
 
-**0:20-0:50 | Slide 3 (Innovation)**
-My innovation is a hybrid model. ARIMA captures the trend and the yearly season. Then a Random Forest learns what ARIMA missed, using recent rain, humidity and wind. The final forecast is ARIMA plus the Random Forest correction. Everything is compared in one dashboard.
+**0:00-0:15 | Slide 1**
+Hello, I am Wickramage, index 224215R. My project forecasts tomorrow's temperature in Colombo using ensemble learning on real Sri Lankan weather data.
 
-**0:50-1:15 | Slide 4 (Data)**
-I used real Colombo weather from 2010 to 2025, 5,844 days, from the open Open-Meteo archive. I trained on 2010 to 2022 and tested on 2023 to 2025, with no shuffling, so the model never sees the future.
+**0:15-0:35 | Slide 2 (innovation)**
+My idea is a hybrid: ARIMA captures trend and the yearly season, and a Random Forest learns what ARIMA missed from recent rain, humidity and wind. Forecast equals ARIMA plus the Random Forest correction.
 
-**1:15-1:40 | Slide 5 (Method)**
-I built all three ensemble types. Bagging: Random Forest, Bagging and Extra Trees. Boosting: XGBoost, LightGBM and CatBoost. Stacking: three models combined by a Ridge meta-model. Plus the RF-ARIMA hybrid. Same split, same metrics.
+**0:35-0:50 | Slide 3**
+I compared all three ensemble types on the same split, 2010 to 2022 for training and 2023 to 2025 for testing: bagging, boosting, stacking, and the hybrid.
 
-**1:40-2:10 | Slide 6 (Results)**
-The lowest error was Ridge (baseline) with MAE 0.424 degrees. The hybrid got 0.426, better than ARIMA alone at 0.429. Random Forest got 0.427 and XGBoost 0.424. All beat the naive "tomorrow equals today" baseline at 0.453. But the top models differ by only about 0.006 degrees, so on this data a simple model is enough.
+**0:50-1:15 | Slide 4 (results)**
+The lowest error was Ridge (baseline) with MAE 0.424 degrees. The hybrid got 0.426, better than ARIMA alone at 0.429. Random Forest 0.427, XGBoost 0.424. All beat the naive baseline of 0.453, but the top models differ by only about 0.006 degrees, so a simple model is enough.
 
-**2:10-2:45 | Slide 7 -> SCREEN RECORD the dashboard**
-Here is the dashboard. Dataset tab: monthly temperature and the two monsoon rainfall peaks. Model comparison: the full table and bar chart. Actual versus forecast: forecasts follow the real curve. Feature importance: yesterday's temperature and the season matter most. Last, I pick a date and the model forecasts it.
-
-**2:45-3:00 | Slide 8 (Conclusion)**
-In conclusion, ensembles beat the baseline, the hybrid improves ARIMA, and the lesson from class holds: choose the simplest model that performs well. Next I will forecast rainfall and add more cities. Thank you.
-
----
-Recording tips: slides first (about 2:10), then screen-record `python -m streamlit run app.py` for about 35 s. Total must be 3:00 maximum.
+**1:15-3:00 | Slide 5 -> SWITCH TO THE BROWSER (live demo, about 1:45)**
+- (1:15) "Here is my running dashboard." Dataset tab: choose temp_mean, then rain_mm. "You can see the two monsoon rain seasons."
+- (1:40) Model comparison tab: show the table, switch metric MAE -> Train_seconds. "Random Forest and boosting are close; stacking and the hybrid cost more time."
+- (2:05) Actual vs forecast tab: select Random Forest and Hybrid RF + ARIMA. "Both follow the real curve."
+- (2:25) Feature importance tab: "Yesterday's temperature and the season matter most."
+- (2:40) Forecast tab: pick a date, choose a model. "The model forecasts that day using only earlier weather and shows the error."
+- (2:52) "Ensembles beat the baseline, the hybrid improves ARIMA, and the lesson: choose the simplest model that performs well. Thank you."

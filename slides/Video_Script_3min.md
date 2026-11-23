@@ -1,26 +1,45 @@
-# 3-MINUTE DEMO SCRIPT  (slides 1:15  +  LIVE dashboard 1:45)
+# WORD-FOR-WORD SCRIPT: PRESENTATION + LIVE DEMO (about 3 minutes)
 
-BEFORE YOU START (screen-share setup):
-1. Open a terminal in the project folder and run:  python -m streamlit run app.py
-2. Open http://localhost:8501 in the browser, keep PowerPoint (Presentation.pptx) in another window.
-3. Share your screen, start recording.
+SETUP (do this before recording)
+1. Terminal: cd into the Submission_Ensemble_Dashboard folder, then run: python -m streamlit run app.py
+2. Open http://localhost:8501 in your browser. Open Presentation_Sentences.pptx in PowerPoint.
+3. Share your screen and start recording. Read the lines in quotes.
 
-**0:00-0:15 | Slide 1**
-Hello, I am Wickramage, index 224215R. My project forecasts tomorrow's temperature in Colombo using ensemble learning on real Sri Lankan weather data.
+======== PART 1 - PRESENTATION (0:00 to 1:15) ========
 
-**0:15-0:35 | Slide 2 (innovation)**
-My idea is a hybrid: ARIMA captures trend and the yearly season, and a Random Forest learns what ARIMA missed from recent rain, humidity and wind. Forecast equals ARIMA plus the Random Forest correction.
+SLIDE 1 (0:00 - 0:15)
+"Hello everyone. My name is Wickramage, index number 224215R. My project forecasts tomorrow's temperature in Colombo using ensemble learning, and I used real Sri Lankan weather data from 2010 to 2025."
 
-**0:35-0:50 | Slide 3**
-I compared all three ensemble types on the same split, 2010 to 2022 for training and 2023 to 2025 for testing: bagging, boosting, stacking, and the hybrid.
+SLIDE 2 (0:15 - 0:35)
+"My innovation is a hybrid model. ARIMA captures the trend and the yearly season. Then a Random Forest learns the mistakes ARIMA leaves behind, using recent rain, humidity and wind. The final forecast is the ARIMA forecast plus the Random Forest correction. I trained on 2010 to 2022 and tested on 2023 to 2025, so the model never sees the future."
 
-**0:50-1:15 | Slide 4 (results)**
-The lowest error was Ridge (baseline) with MAE 0.424 degrees. The hybrid got 0.426, better than ARIMA alone at 0.429. Random Forest 0.427, XGBoost 0.424. All beat the naive baseline of 0.453, but the top models differ by only about 0.006 degrees, so a simple model is enough.
+SLIDE 3 (0:35 - 0:50)
+"The data comes from the open Open-Meteo archive, with 5,844 days. I built all three ensemble types: bagging with Random Forest, Bagging and Extra Trees; boosting with XGBoost, LightGBM and CatBoost; and stacking with a Ridge meta-model. I also built the hybrid. Every model uses the same split and the same metrics."
 
-**1:15-3:00 | Slide 5 -> SWITCH TO THE BROWSER (live demo, about 1:45)**
-- (1:15) "Here is my running dashboard." Dataset tab: choose temp_mean, then rain_mm. "You can see the two monsoon rain seasons."
-- (1:40) Model comparison tab: show the table, switch metric MAE -> Train_seconds. "Random Forest and boosting are close; stacking and the hybrid cost more time."
-- (2:05) Actual vs forecast tab: select Random Forest and Hybrid RF + ARIMA. "Both follow the real curve."
-- (2:25) Feature importance tab: "Yesterday's temperature and the season matter most."
-- (2:40) Forecast tab: pick a date, choose a model. "The model forecasts that day using only earlier weather and shows the error."
-- (2:52) "Ensembles beat the baseline, the hybrid improves ARIMA, and the lesson: choose the simplest model that performs well. Thank you."
+SLIDE 4 (0:50 - 1:15)
+"Here are the results. The lowest error was Ridge (baseline), with an MAE of 0.424 degrees. The hybrid scored 0.426, which is better than ARIMA alone at 0.429. Random Forest scored 0.427 and XGBoost scored 0.424. Every model beat the naive baseline of 0.453. But the top models differ by only about 0.006 degrees, so on this data a simple model is enough."
+
+======== PART 2 - LIVE DEMO (1:15 to 3:00) ========
+
+SLIDE 5 (1:15 - 1:20)
+"Now let me show the running dashboard." (SWITCH TO THE BROWSER)
+
+TAB 1: Dataset (1:20 - 1:40)  [click the Dataset tab, then change Variable to rain_mm]
+"This is the Dataset tab. Here is the monthly temperature for Colombo. When I switch to rainfall, you can see the two monsoon seasons in Sri Lanka."
+
+TAB 2: Model comparison (1:40 - 2:05)  [click Model comparison, change Metric to MAE, then Train_seconds]
+"This tab compares all the models in one table and one bar chart. By MAE, the models are very close. If I switch to training time, you can see that stacking and the hybrid cost more time, but they do not give a meaningful gain."
+
+TAB 3: Actual vs forecast (2:05 - 2:25)  [select Random Forest and Hybrid RF + ARIMA]
+"Here I plot the real temperature in black against the Random Forest and the hybrid forecast. Both follow the real curve closely."
+
+TAB 4: Feature importance (2:25 - 2:40)  [select Random Forest]
+"This chart shows what the model uses. Yesterday's temperature, the recent averages and the season matter most. Rainfall and humidity add smaller corrections."
+
+TAB 5: Forecast a day (2:40 - 2:52)  [choose Random Forest, pick any date]
+"Finally, I can pick a model and a date. The model uses only earlier weather to forecast that day, and the dashboard shows the forecast and the error against the real value."
+
+CLOSING (2:52 - 3:00)
+"In conclusion, ensembles clearly beat the baseline, the hybrid improves ARIMA, and the lesson from class holds: choose the simplest model that performs well. Thank you."
+
+TIPS: speak slowly; if you run over 3:00, shorten Tab 1 and Tab 4. Total limit is 3 minutes.

@@ -2,3 +2,5 @@ __pycache__/
 catboost_info/
 *.log
 video_build/
+Video_Parts/
+Demo_Video_FULL_SILENT_add_voiceover.mp4
